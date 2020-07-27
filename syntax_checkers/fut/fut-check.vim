@@ -25,7 +25,8 @@ function! SyntaxCheckers_fut_futhark_GetLocList() dict
                 \ 'fname': shellescape(expand('%') )})
 
     let errorformat =
-        \ 'Error at %f:%l:%c-%m,'
+        \ '%EError at %f:%l:%c-%m,' .
+        \ '%m,%Z'
 
     let loclist = SyntasticMake({
             \ 'makeprg': makeprg,
